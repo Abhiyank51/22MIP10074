@@ -58,6 +58,8 @@ export default function Dashboard() {
         setFilter={setFilter} 
         limit={limit} 
         setLimit={setLimit} 
+        page={page}
+        setPage={setPage}
         onRefresh={loadNotifications} 
       />
 

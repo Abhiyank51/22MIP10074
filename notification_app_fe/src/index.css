@@ -141,6 +141,28 @@ body {
   background-color: #000;
 }
 
+.pagination-group {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.page-btn {
+  padding: 0.4rem 0.8rem;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-display {
+  font-weight: 600;
+}
+
 /* Notifications Grid */
 .notifications-grid {
   display: grid;
