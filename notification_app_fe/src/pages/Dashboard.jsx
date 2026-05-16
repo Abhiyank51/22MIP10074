@@ -12,7 +12,7 @@ export default function Dashboard() {
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  
+
   const [filter, setFilter] = useState('All');
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(1);
@@ -26,7 +26,7 @@ export default function Dashboard() {
       const data = await fetchNotifications(limit, page, filter);
       const sortedData = sortByPriority(data);
       setNotifications(sortedData);
-      
+
       if (sortedData.length === 0) {
         Log("frontend", "warn", "page", "Empty notification list received");
       }
@@ -53,19 +53,19 @@ export default function Dashboard() {
 
       <StatsPanel notifications={notifications} filter={filter} />
 
-      <FilterBar 
-        filter={filter} 
-        setFilter={setFilter} 
-        limit={limit} 
-        setLimit={setLimit} 
+      <FilterBar
+        filter={filter}
+        setFilter={setFilter}
+        limit={limit}
+        setLimit={setLimit}
         page={page}
         setPage={setPage}
-        onRefresh={loadNotifications} 
+        onRefresh={loadNotifications}
       />
 
       <main className="dashboard-content">
         {loading && <div className="loading-spinner">Loading notifications...</div>}
-        
+
         {error && (
           <div className="error-banner">
             <span className="error-icon">⚠️</span>
@@ -82,9 +82,9 @@ export default function Dashboard() {
             {notifications.map((notif, index) => {
               const priorityData = getPriorityScore(notif);
               return (
-                <NotificationCard 
-                  key={notif.ID} 
-                  notification={notif} 
+                <NotificationCard
+                  key={notif.ID}
+                  notification={notif}
                   rank={index + 1}
                   score={priorityData.score}
                   reason={priorityData.reason}

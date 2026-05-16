@@ -39,14 +39,12 @@ export default function FilterBar({ filter, setFilter, limit, setLimit, page, se
           <option value="Event">Event</option>
         </select>
       </div>
-      
+
       <div className="filter-group">
         <label htmlFor="limit-filter">Limit:</label>
         <select id="limit-filter" value={limit} onChange={handleLimitChange}>
           <option value={5}>5</option>
           <option value={10}>10</option>
-          <option value={15}>15</option>
-          <option value={20}>20</option>
         </select>
       </div>
 
